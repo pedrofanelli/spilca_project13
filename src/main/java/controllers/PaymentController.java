@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.logging.Logger;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +13,8 @@ import services.PaymentService;
 @RestController
 public class PaymentController {
 
+	private static Logger logger = Logger.getLogger(PaymentController.class.getName());
+	
 	private final PaymentService paymentService;
 	
 	// DI
