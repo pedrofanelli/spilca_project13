@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import models.PaymentDetails;
@@ -30,8 +31,12 @@ public class PaymentController {
 	 */
 	
 	@PostMapping("/payment")
-	public ResponseEntity<PaymentDetails> makePayment() {
-		PaymentDetails paymentDetails = paymentService.processPayment();
+	public ResponseEntity<PaymentDetails> makePayment(
+			@RequestBody PaymentDetails paymentDetails) {
+		//PaymentDetails paymentDetails = paymentService.processPayment();
+		
+		logger.info("Recieved payment: "+paymentDetails.getAmount());
+		
 		return ResponseEntity
 				.status(HttpStatus.ACCEPTED)
 				.body(paymentDetails);
