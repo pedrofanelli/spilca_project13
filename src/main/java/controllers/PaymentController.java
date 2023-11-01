@@ -32,14 +32,14 @@ public class PaymentController {
 	
 	@PostMapping("/payment")
 	public ResponseEntity<PaymentDetails> makePayment(
-			@RequestBody PaymentDetails paymentDetails) {
+			@RequestBody PaymentDetails paymentDetailss) {
 		//PaymentDetails paymentDetails = paymentService.processPayment();
 		
-		logger.info("Recieved payment: "+paymentDetails.getAmount());
+		logger.info("Recieved payment: "+paymentDetailss.getAmount());
 		
 		return ResponseEntity
 				.status(HttpStatus.ACCEPTED)
-				.body(paymentDetails);
+				.body(paymentDetailss);
 	}
 	
 }

@@ -13,7 +13,7 @@ public class ExceptionControllerAdvice {
 	@ExceptionHandler(NotEnoughMoneyException.class)
 	public ResponseEntity<ErrorDetails> exceptionNotEnoughMoneyHandler(NotEnoughMoneyException ex) {
 		ErrorDetails errorDetails = new ErrorDetails();
-		errorDetails.setMessage("No hay suficiente guita!!!"+ex.getMessage());
+		errorDetails.setMessage("No hay suficiente guita!!! "+ex.getMessage());
 		return ResponseEntity
 				.badRequest()
 				.body(errorDetails);

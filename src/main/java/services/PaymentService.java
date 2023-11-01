@@ -9,6 +9,6 @@ import exceptions.NotEnoughMoneyException;
 public class PaymentService {
 
 	public PaymentDetails processPayment() {
-		throw new NotEnoughMoneyException();
+		throw new NotEnoughMoneyException("FALTA GUITA LOCOOOO!");
 	}
 }
