@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages= {"controllers"})
+@ComponentScan(basePackages= {"controllers","exceptionHandlers","services"})
 public class SpilcaProject13Application {
 
 	public static void main(String[] args) {
